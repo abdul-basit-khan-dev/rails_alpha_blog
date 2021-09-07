@@ -1,0 +1,1 @@
+This is a first project of the complete ruby on rails guaid!
