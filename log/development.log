@@ -9129,3 +9129,2182 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 44ms (Views: 39.0ms | ActiveRecord: 3.5ms | Allocations: 8015)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6643483464595264770)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20210916094314)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6643483464595264770)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6643483464595264770)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20210916094314)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6643483464595264770)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6643483464595264770)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20210916094314)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mALTER TABLE "users" ADD "assword_digest" strign[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6643483464595264770)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6643483464595264770)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20210916094314)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" strign[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6643483464595264770)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6643483464595264770)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPasswordDigestToUsers (20210916094314)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (3.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210916094314"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6643483464595264770)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["name", "Basit"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "basit.kahn@dev.co"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2021-09-16 09:48:31.161581"], ["password_digest", "$2a$12$E0.TMvPscGZj1aCSAM61TOhL0/gPpGoXPUM0Ad7kn3L73faLqTu8u"], ["id", 2]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2021-09-19 11:37:58 +0500
+Started GET "/" for ::1 at 2021-09-19 11:37:58 +0500
+  
+SyntaxError (/media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/config/routes.rb:5: syntax error, unexpected local variable or method, expecting `end'
+  get 'signup' to: 'user#new'
+               ^~
+):
+  
+config/routes.rb:5: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:5: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:5: syntax error, unexpected local variable or method, expecting `end'
+  
+SyntaxError (/media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/config/routes.rb:5: syntax error, unexpected local variable or method, expecting `end'
+  get 'signup' to: 'user#new'
+               ^~
+):
+  
+config/routes.rb:5: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:5: syntax error, unexpected local variable or method, expecting `end'
+config/routes.rb:5: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/" for ::1 at 2021-09-19 11:40:34 +0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 679)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 10.0ms | Allocations: 338)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 165)
+  Rendered layout layouts/application.html.erb (Duration: 209.7ms | Allocations: 4422)
+Completed 200 OK in 305ms (Views: 263.2ms | ActiveRecord: 0.0ms | Allocations: 8104)
+
+
+Started GET "/" for ::1 at 2021-09-19 11:40:34 +0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 98)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 2497)
+Completed 200 OK in 20ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 3048)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 11:40:44 +0500
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 5311)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 5395)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 25.8ms | Allocations: 12589)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x00000000009678>
+Did you mean?  article_url):
+    1: <h1> Create Account for Alpha Blog</h1>
+    2: 
+    3: <%= form_with(model: @user) do |form| %>
+    4:   <% if article.errors.any? %>
+    5:     <div id="error_explanation">
+    6:       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+    7:       <ul>
+  
+app/views/user/new.html.erb:4
+app/views/user/new.html.erb:3
+Started GET "/signup" for ::1 at 2021-09-19 11:41:32 +0500
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 117.4ms | Allocations: 5974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 333)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 129.8ms | Allocations: 9212)
+Completed 200 OK in 134ms (Views: 132.3ms | ActiveRecord: 0.0ms | Allocations: 10629)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 11:41:53 +0500
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.0ms | Allocations: 330)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 4478)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 5893)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 11:43:14 +0500
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 26.1ms | Allocations: 4733)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 333)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | Allocations: 7959)
+Completed 200 OK in 45ms (Views: 42.2ms | ActiveRecord: 0.0ms | Allocations: 9352)
+
+
+Started GET "/users/edit" for ::1 at 2021-09-19 11:43:45 +0500
+  
+ActionController::RoutingError (uninitialized constant UsersController
+Did you mean?  UserController):
+  
+Started GET "/users" for ::1 at 2021-09-19 11:43:49 +0500
+  
+ActionController::RoutingError (uninitialized constant UsersController
+Did you mean?  UserController):
+  
+Started GET "/signup" for ::1 at 2021-09-19 11:43:53 +0500
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1447)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.4ms | Allocations: 330)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 167)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 4711)
+Completed 200 OK in 29ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 6078)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 11:46:39 +0500
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 160)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 3621)
+Completed 200 OK in 56ms (Views: 16.9ms | ActiveRecord: 14.3ms | Allocations: 11619)
+
+
+Started POST "/users" for ::1 at 2021-09-19 11:46:54 +0500
+  
+ActionController::RoutingError (uninitialized constant UsersController
+Did you mean?  UserController):
+  
+Started POST "/users" for ::1 at 2021-09-19 11:47:59 +0500
+  
+ActionController::RoutingError (uninitialized constant UsersController
+Did you mean?  UserController):
+  
+Started GET "/signup" for ::1 at 2021-09-19 11:48:00 +0500
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 160)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 3652)
+Completed 200 OK in 48ms (Views: 15.9ms | ActiveRecord: 13.8ms | Allocations: 9430)
+
+
+Started POST "/users" for ::1 at 2021-09-19 11:48:02 +0500
+  
+ActionController::RoutingError (uninitialized constant UsersController
+Did you mean?  UserController):
+  
+Started GET "/signup" for ::1 at 2021-09-19 11:50:23 +0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/" for ::1 at 2021-09-19 11:50:24 +0500
+  
+Zeitwerk::NameError (expected file /media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/app/helpers/user_helper.rb to define constant UserHelper, but didn't):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2021-09-19 11:50:28 +0500
+Processing by PagesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3303)
+
+
+  
+NameError (uninitialized constant UserHelper
+Did you mean?  UsersHelper):
+  
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4.1) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:176:in `block in modules_for_helpers'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:169:in `map!'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:169:in `modules_for_helpers'
+actionpack (6.1.4.1) lib/action_controller/metal/helpers.rb:104:in `modules_for_helpers'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:147:in `helper'
+actionpack (6.1.4.1) lib/action_controller/railties/helpers.rb:19:in `inherited'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `initialize'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `new'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `block (2 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:71:in `class_eval'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:71:in `block in execute_hook'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:61:in `with_execution_control'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:66:in `execute_hook'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:52:in `block in run_load_hooks'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:51:in `each'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:51:in `run_load_hooks'
+actiontext (6.1.4.1) lib/action_text/content.rb:128:in `<main>'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:34:in `require'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-09-19 11:51:05 +0500
+  
+NameError (uninitialized constant UserHelper
+Did you mean?  UsersHelper):
+  
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2021-09-19 11:51:18 +0500
+Processing by PagesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 2744)
+
+
+  
+NameError (uninitialized constant UserHelper
+Did you mean?  UsersHelper):
+  
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4.1) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:176:in `block in modules_for_helpers'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:169:in `map!'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:169:in `modules_for_helpers'
+actionpack (6.1.4.1) lib/action_controller/metal/helpers.rb:104:in `modules_for_helpers'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:147:in `helper'
+actionpack (6.1.4.1) lib/action_controller/railties/helpers.rb:19:in `inherited'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `initialize'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `new'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `block (2 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:71:in `class_eval'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:71:in `block in execute_hook'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:61:in `with_execution_control'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:66:in `execute_hook'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:52:in `block in run_load_hooks'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:51:in `each'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:51:in `run_load_hooks'
+actiontext (6.1.4.1) lib/action_text/content.rb:128:in `<main>'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:34:in `require'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-09-19 11:51:56 +0500
+Processing by PagesController#index as HTML
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 4995)
+
+
+  
+NameError (uninitialized constant UserHelper
+Did you mean?  UsersHelper):
+  
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:274:in `const_get'
+activesupport (6.1.4.1) lib/active_support/inflector/methods.rb:274:in `constantize'
+activesupport (6.1.4.1) lib/active_support/core_ext/string/inflections.rb:74:in `constantize'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:176:in `block in modules_for_helpers'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:169:in `map!'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:169:in `modules_for_helpers'
+actionpack (6.1.4.1) lib/action_controller/metal/helpers.rb:104:in `modules_for_helpers'
+actionpack (6.1.4.1) lib/abstract_controller/helpers.rb:147:in `helper'
+actionpack (6.1.4.1) lib/action_controller/railties/helpers.rb:19:in `inherited'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `initialize'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `new'
+actiontext (6.1.4.1) lib/action_text/engine.rb:53:in `block (2 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:71:in `class_eval'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:71:in `block in execute_hook'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:61:in `with_execution_control'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:66:in `execute_hook'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:52:in `block in run_load_hooks'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:51:in `each'
+activesupport (6.1.4.1) lib/active_support/lazy_load_hooks.rb:51:in `run_load_hooks'
+actiontext (6.1.4.1) lib/action_text/content.rb:128:in `<main>'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `require'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:23:in `block in require_with_bootsnap_lfi'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require_with_bootsnap_lfi'
+bootsnap (1.8.1) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:31:in `require'
+zeitwerk (2.4.2) lib/zeitwerk/kernel.rb:34:in `require'
+actiontext (6.1.4.1) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.1) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.1) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.1) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-09-19 11:52:19 +0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 436)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 335)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 165)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 4072)
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 0.0ms | Allocations: 6192)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 11:52:52 +0500
+  
+ActionController::RoutingError (uninitialized constant UserController):
+  
+Started GET "/signup" for ::1 at 2021-09-19 11:55:10 +0500
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/" for ::1 at 2021-09-19 11:55:17 +0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 387)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.3ms | Allocations: 320)
+  Rendered shared/_footer.html.erb (Duration: 8.5ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 3664)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 5131)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 11:55:30 +0500
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/signup" for ::1 at 2021-09-19 11:55:49 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 3503)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 6006)
+Completed 200 OK in 50ms (Views: 26.0ms | ActiveRecord: 9.1ms | Allocations: 13383)
+
+
+Started POST "/users" for ::1 at 2021-09-19 11:56:10 +0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"nasir", "email"=>"basitkhanbasit641110@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User", "expect"=>[:new]}
+No template found for UsersController#create, rendering head :no_content
+Completed 204 No Content in 13833ms (ActiveRecord: 0.0ms | Allocations: 71371)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 11:58:16 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1539)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 170)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4330)
+Completed 200 OK in 39ms (Views: 16.5ms | ActiveRecord: 7.3ms | Allocations: 10588)
+
+
+Started POST "/users" for ::1 at 2021-09-19 11:58:23 +0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"nasir", "email"=>"basitkhanbasit64110@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User", "expect"=>[:new]}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER($1) LIMIT $2[0m  [["name", "nasir"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "basitkhanbasit64110@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "nasir"], ["email", "basitkhanbasit64110@gmail.com"], ["created_at", "2021-09-19 06:58:33.823193"], ["updated_at", "2021-09-19 06:58:33.823193"], ["password_digest", "$2a$12$TgHo5tH/i.tLznv80lLdZ.OyrIfEB60.9/dzB8V1HD19COdF7jvJK"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 10487ms (ActiveRecord: 16.9ms | Allocations: 8949)
+
+
+Started GET "/articles" for ::1 at 2021-09-19 11:58:33 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:14
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:20
+  Rendered articles/index.html.erb within layouts/application (Duration: 45.1ms | Allocations: 9823)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 148)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | Allocations: 12238)
+Completed 200 OK in 62ms (Views: 43.6ms | ActiveRecord: 13.0ms | Allocations: 14568)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/users/5/edit" for ::1 at 2021-09-19 12:10:25 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"5"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+Completed 404 Not Found in 35ms (ActiveRecord: 14.1ms | Allocations: 6895)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=5):
+  
+app/controllers/users_controller.rb:17:in `edit'
+Started GET "/users/2/edit" for ::1 at 2021-09-19 12:10:35 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 0.7ms | Allocations: 139)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 2.1ms | Allocations: 362)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3538)
+Completed 200 OK in 35ms (Views: 18.9ms | ActiveRecord: 1.4ms | Allocations: 7919)
+
+
+Started GET "/users/2/edit" for ::1 at 2021-09-19 12:12:36 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1753)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 1828)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.3ms | Allocations: 3986)
+
+
+  
+ActionView::Template::Error (Missing partial users/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actiontext-6.1.4.1/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actionmailbox-6.1.4.1/app/views"
+):
+    1: <div class="container">
+    2:   <h2> Edit You Account</h2>
+    3: 
+    4:   <%= render "form" %>
+    5: 
+    6: </div>
+  
+app/views/users/edit.html.erb:4
+Started GET "/signup" for ::1 at 2021-09-19 12:13:13 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1171)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 1239)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1863)
+
+
+  
+ActionView::Template::Error (Missing partial users/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actiontext-6.1.4.1/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actionmailbox-6.1.4.1/app/views"
+):
+    1: <div class="container">
+    2:   <h1> Create Account for Alpha Blog</h1>
+    3:   <%= render "form" %>
+    4: </div>
+  
+app/views/users/new.html.erb:3
+Started GET "/signup" for ::1 at 2021-09-19 12:15:25 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1725)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1799)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3090)
+
+
+  
+ActionView::Template::Error (Missing partial users/_form, application/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actiontext-6.1.4.1/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actionmailbox-6.1.4.1/app/views"
+):
+    1: <div class="container">
+    2:   <h1> Create Account for Alpha Blog</h1>
+    3:   <%= render "form" %>
+    4: </div>
+  
+app/views/users/new.html.erb:3
+Started GET "/signup" for ::1 at 2021-09-19 12:16:12 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.0ms | Allocations: 1504)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1849)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.3ms | Allocations: 327)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 5103)
+Completed 200 OK in 31ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 6508)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 12:16:22 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.2ms | Allocations: 2612)
+  Rendered users/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 2960)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 3034)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 4389)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for {:model=>#<User id: nil, name: nil, email: nil, created_at: nil, updated_at: nil, password_digest: nil>}:Hash):
+    1: 
+    2: <%= form_for(model: @user) do |form| %>
+    3:   <% if @user.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+  
+app/views/users/_form.html.erb:2
+app/views/users/new.html.erb:3
+Started GET "/signup" for ::1 at 2021-09-19 12:17:37 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 1413)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1758)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.5ms | Allocations: 327)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 5009)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 6413)
+
+
+Started GET "/users/2/edit" for ::1 at 2021-09-19 12:17:44 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 954)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 3473)
+Completed 200 OK in 29ms (Views: 16.1ms | ActiveRecord: 1.7ms | Allocations: 4887)
+
+
+Started GET "/users/2/edit" for ::1 at 2021-09-19 12:19:34 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1510)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1858)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1933)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 3.9ms | Allocations: 3906)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<%= form_with(model: @user) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :name, class:"form-label" %>
+    <%= form.text_field :name, class:"form-control", id:"exampleInputEmail1"%>
+  </div>
+  <div class="mb-3">
+    <%= form.label :email, class:"form-label" %>
+    <%= form.email_field :email, class:"form-control", id:"exampleInputEmail1"%>
+  </div>
+  <div class="mb-3">
+    <%= form.label :password, class:"form-label" %>
+    <%= form.password_field :password, class:"form-control", id:"exampleInputEmail1"%>
+  </div>
+  <div class="actions">
+    <%= form.submit(@user.new_record? ? "Signup" : "Update Account"   class:"btn btn-primary" )%>
+  </div>
+<% end %>
+):
+1:    
+2:    <%= form_with(model: @user) do |form| %>
+3:      <% if @user.errors.any? %>
+4:        <div id="error_explanation">
+5:          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+6:          <ul>
+7:            <% @user.errors.each do |error| %>
+8:              <li><%= error.full_message %></li>
+9:            <% end %>
+10:          </ul>
+11:        </div>
+12:      <% end %>
+13:      <div class="mb-3">
+14:        <%= form.label :name, class:"form-label" %>
+15:        <%= form.text_field :name, class:"form-control", id:"exampleInputEmail1"%>
+16:      </div>
+17:      <div class="mb-3">
+18:        <%= form.label :email, class:"form-label" %>
+19:        <%= form.email_field :email, class:"form-control", id:"exampleInputEmail1"%>
+20:      </div>
+21:      <div class="mb-3">
+22:        <%= form.label :password, class:"form-label" %>
+23:        <%= form.password_field :password, class:"form-control", id:"exampleInputEmail1"%>
+24:      </div>
+25:      <div class="actions">
+26:        <%= form.submit(@user.new_record? ? "Signup" : "Update Account"   class:"btn btn-primary" )%>
+27:      </div>
+28:    <% end %>
+  
+app/views/users/_form.html.erb:26: syntax error, unexpected `class', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/users/_form.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected `class', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/users/_form.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected `class', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/users/_form.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected `class', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/users/_form.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected `class', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/users/_form.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected `class', expecting ')'
+app/views/users/_form.html.erb:26: syntax error, unexpected ')', expecting '.' or &. or :: or '['
+app/views/users/_form.html.erb:28: syntax error, unexpected `end', expecting ')'
+app/views/users/_form.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/users/edit.html.erb:4
+Started GET "/users/2/edit" for ::1 at 2021-09-19 12:20:22 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.2ms | Allocations: 1352)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 327)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 4977)
+Completed 200 OK in 29ms (Views: 20.9ms | ActiveRecord: 1.5ms | Allocations: 7148)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 12:20:29 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.1ms | Allocations: 775)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 960)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 3268)
+Completed 200 OK in 28ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 3908)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 12:20:30 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.1ms | Allocations: 772)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 3171)
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 3628)
+
+
+Started GET "/users/2/edit" for ::1 at 2021-09-19 12:20:41 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 804)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 901)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 3225)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 1.2ms | Allocations: 4457)
+
+
+Started GET "/users/6/edit" for ::1 at 2021-09-19 12:20:50 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"6"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+Completed 404 Not Found in 11ms (ActiveRecord: 1.2ms | Allocations: 1249)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=6):
+  
+app/controllers/users_controller.rb:17:in `edit'
+Started GET "/users/4/edit" for ::1 at 2021-09-19 12:20:55 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+Completed 404 Not Found in 10ms (ActiveRecord: 2.1ms | Allocations: 1245)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=4):
+  
+app/controllers/users_controller.rb:17:in `edit'
+Started GET "/users/3/edit" for ::1 at 2021-09-19 12:20:58 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.4ms | Allocations: 805)
+  Rendered users/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 902)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 3236)
+Completed 200 OK in 25ms (Views: 17.3ms | ActiveRecord: 1.9ms | Allocations: 4370)
+
+
+Started PATCH "/users/3" for ::1 at 2021-09-19 12:21:05 +0500
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for UsersController
+Did you mean?  create
+               edit
+               index
+               new):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/3/edit" for ::1 at 2021-09-19 12:24:59 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.6ms | Allocations: 1082)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1190)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 157)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 3690)
+Completed 200 OK in 50ms (Views: 16.7ms | ActiveRecord: 14.5ms | Allocations: 10393)
+
+
+Started PATCH "/users/3" for ::1 at 2021-09-19 12:25:03 +0500
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"nasir", "email"=>"basitkhanbasit0@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Update Account", "expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Exists? (4.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["name", "nasir"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) AND "users"."id" != $2 LIMIT $3[0m  [["email", "basitkhanbasit0@gmail.com"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "email" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["email", "basitkhanbasit0@gmail.com"], ["updated_at", "2021-09-19 07:25:03.105576"], ["id", 3]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (9.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 50ms (ActiveRecord: 23.5ms | Allocations: 6250)
+
+
+Started GET "/articles" for ::1 at 2021-09-19 12:25:03 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (2.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:14
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:20
+  Rendered articles/index.html.erb within layouts/application (Duration: 39.0ms | Allocations: 7579)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 148)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 48.0ms | Allocations: 9983)
+Completed 200 OK in 55ms (Views: 39.2ms | ActiveRecord: 11.2ms | Allocations: 11964)
+
+
+Started GET "/articles" for ::1 at 2021-09-19 12:47:14 +0500
+  
+SyntaxError (/media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/app/helpers/application_helper.rb:12: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/helpers/application_helper.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/helpers/application_helper.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/helpers/application_helper.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/articles_controller.rb:1:in `<main>'
+Started GET "/articles" for ::1 at 2021-09-19 12:47:31 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (2.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:14
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:20
+  Rendered articles/index.html.erb within layouts/application (Duration: 76.3ms | Allocations: 14512)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 3.6ms | Allocations: 319)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 95.5ms | Allocations: 17749)
+Completed 200 OK in 104ms (Views: 99.3ms | ActiveRecord: 22.6ms | Allocations: 20187)
+
+
+Started GET "/articles/user/3" for ::1 at 2021-09-19 12:47:44 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/user/3"):
+  
+Started GET "/articles/users/3" for ::1 at 2021-09-19 12:47:49 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/articles/users/3"):
+  
+Started GET "/users/3" for ::1 at 2021-09-19 12:47:55 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1519)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 1593)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2698)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to <%= @user.name %></h1>
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-4">
+  
+app/views/users/show.html.erb:1
+Started GET "/users/3" for ::1 at 2021-09-19 12:48:15 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1550)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1624)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2871)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to <%= @users.name %></h1>
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-4">
+  
+app/views/users/show.html.erb:1
+Started GET "/users/3" for ::1 at 2021-09-19 12:49:13 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1420)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1494)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 19.6ms | Allocations: 8158)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to <%= @users.name %></h1>
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-4">
+  
+app/views/users/show.html.erb:1
+Started GET "/users/3" for ::1 at 2021-09-19 12:49:22 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 21.9ms | Allocations: 4033)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 4107)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.9ms | Allocations: 6233)
+
+
+  
+ActionView::Template::Error (undefined method `gravator_for' for #<ActionView::Base:0x0000000001eed8>
+Did you mean?  gravatar_for):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-4">
+    5:     <%= gravator_for @user %>
+    6:   </div>
+    7: </div>
+  
+app/views/users/show.html.erb:5
+Started GET "/users/3" for ::1 at 2021-09-19 12:49:56 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3265)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 3339)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.2ms | Allocations: 5465)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<User id: 3, name: "nasir", email: "basitkhanbasit0@gmail.com", created_at: "2021-09-19 06:58:33.823193000 +0000", updated_at: "2021-09-19 07:25:03.105576000 +0000", password_digest: [FILTERED]>):
+    2: 
+    3: <div class="row">
+    4:   <div class="col-md-4">
+    5:     <%= gravatar_for @user %>
+    6:   </div>
+    7: </div>
+  
+app/helpers/application_helper.rb:10:in `gravatar_for'
+app/views/users/show.html.erb:5
+Started GET "/users/3" for ::1 at 2021-09-19 12:50:24 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 129)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.4ms | Allocations: 362)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 3517)
+Completed 200 OK in 41ms (Views: 12.3ms | ActiveRecord: 10.8ms | Allocations: 10040)
+
+
+Started GET "/users/2/edit" for ::1 at 2021-09-19 12:50:40 +0500
+Processing by UsersController#edit as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.0ms | Allocations: 1367)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1685)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 4013)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 1.3ms | Allocations: 5426)
+
+
+Started GET "/users/2" for ::1 at 2021-09-19 12:50:43 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 74)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 149)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 2424)
+Completed 200 OK in 19ms (Views: 11.8ms | ActiveRecord: 1.4ms | Allocations: 3558)
+
+
+Started GET "/users/2" for ::1 at 2021-09-19 12:51:19 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 249)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 359)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 3582)
+Completed 200 OK in 24ms (Views: 17.3ms | ActiveRecord: 1.3ms | Allocations: 5603)
+
+
+Started GET "/users/2" for ::1 at 2021-09-19 12:51:26 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 249)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.3ms | Allocations: 359)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 3580)
+Completed 200 OK in 23ms (Views: 16.3ms | ActiveRecord: 1.5ms | Allocations: 5745)
+
+
+Started GET "/users/2" for ::1 at 2021-09-19 12:51:33 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 248)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.0ms | Allocations: 359)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3581)
+Completed 200 OK in 22ms (Views: 15.2ms | ActiveRecord: 1.4ms | Allocations: 5746)
+
+
+Started GET "/users/2" for ::1 at 2021-09-19 12:51:46 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 360)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 3587)
+Completed 200 OK in 30ms (Views: 22.3ms | ActiveRecord: 1.8ms | Allocations: 5753)
+
+
+Started GET "/users/2" for ::1 at 2021-09-19 12:51:55 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 248)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 359)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 3579)
+Completed 200 OK in 30ms (Views: 18.3ms | ActiveRecord: 1.3ms | Allocations: 5752)
+
+
+Started GET "/" for ::1 at 2021-09-19 12:54:00 +0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 386)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 319)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 3612)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 5073)
+
+
+Started GET "/" for ::1 at 2021-09-19 12:54:00 +0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 135)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 2394)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 2884)
+
+
+Started GET "/articles" for ::1 at 2021-09-19 12:54:02 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (3.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:8
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:14
+  Rendered articles/index.html.erb within layouts/application (Duration: 58.8ms | Allocations: 8415)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 148)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 72.6ms | Allocations: 10948)
+Completed 200 OK in 84ms (Views: 62.7ms | ActiveRecord: 14.7ms | Allocations: 12915)
+
+
+Started GET "/users/2" for ::1 at 2021-09-19 12:57:25 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1590)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 1664)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.4ms | Allocations: 3717)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_arcticle with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actiontext-6.1.4.1/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actionmailbox-6.1.4.1/app/views"
+):
+     5:       <%= gravatar_for @user, size:80 %>
+     6:     </div>
+     7:     <h4> <%= @user.name %>,s articles </h4>
+     8:     <%= render 'articles/arcticle' %>
+     9:   </div>
+    10: </div>
+  
+app/views/users/show.html.erb:8
+Started GET "/" for ::1 at 2021-09-19 12:57:35 +0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.5ms | Allocations: 319)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 3677)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 4812)
+
+
+Started GET "/articles/new" for ::1 at 2021-09-19 12:57:37 +0500
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 4.4ms | Allocations: 1277)
+  Rendered articles/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 4166)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 5334)
+
+
+Started GET "/articles" for ::1 at 2021-09-19 12:57:38 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 27.3ms | Allocations: 4400)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 5122)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms | Allocations: 5740)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles' for #<ActionView::Base:0x00000000022420>
+Did you mean?  @articles):
+    4: <h1> List of Articles</h1>
+    5: 
+    6: <table>
+    7:   <%= render abj: articles %>
+    8: </table>
+    9: 
+   10: <br>
+  
+app/views/articles/index.html.erb:7
+Started GET "/articles" for ::1 at 2021-09-19 12:57:53 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 4389)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 4463)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 5760)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles' for #<ActionView::Base:0x00000000022740>
+Did you mean?  @articles):
+    4: <h1> List of Articles</h1>
+    5: 
+    6: <table>
+    7:   <%= render obj: articles %>
+    8: </table>
+    9: 
+   10: <br>
+  
+app/views/articles/index.html.erb:7
+Started GET "/articles" for ::1 at 2021-09-19 12:58:27 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1223)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 1297)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 2659)
+
+
+  
+ActionView::Template::Error (You invoked render but did not give any of :partial, :template, :inline, :file, :plain, :html or :body option.):
+    4: <h1> List of Articles</h1>
+    5: 
+    6: <table>
+    7:   <%= render obj: @articles %>
+    8: </table>
+    9: 
+   10: <br>
+  
+app/views/articles/index.html.erb:7
+Started GET "/articles" for ::1 at 2021-09-19 12:59:10 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1216)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1290)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2650)
+
+
+  
+ActionView::Template::Error (You invoked render but did not give any of :partial, :template, :inline, :file, :plain, :html or :body option.):
+    4: <h1> List of Articles</h1>
+    5: 
+    6: <table>
+    7:   <%= render obj: @articles %>
+    8: </table>
+    9: 
+   10: <br>
+  
+app/views/articles/index.html.erb:7
+Started GET "/users/2" for ::1 at 2021-09-19 12:59:18 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1266)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.3ms | Allocations: 3154)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <h1>Welcome to <%= @user.name %></h1>
+      <%= gravatar_for @user, size:80 %>
+    </div>
+    <h4> <%= @user.name %>,s articles </h4>
+    <%= render 'articles/arcticle' @user.articles %>
+  </div>
+</div>
+
+
+
+):
+1:    <div class="container">
+2:      <div class="row">
+3:        <div class="col-md-4 offset-md-4">
+4:          <h1>Welcome to <%= @user.name %></h1>
+5:          <%= gravatar_for @user, size:80 %>
+6:        </div>
+7:        <h4> <%= @user.name %>,s articles </h4>
+8:        <%= render 'articles/arcticle' @user.articles %>
+9:      </div>
+10:    </div>
+  
+app/views/users/show.html.erb:8: syntax error, unexpected instance variable, expecting ')'
+app/views/users/show.html.erb:8: syntax error, unexpected instance variable, expecting ')'
+app/views/users/show.html.erb:8: syntax error, unexpected instance variable, expecting ')'
+app/views/users/show.html.erb:8: syntax error, unexpected instance variable, expecting ')'
+app/views/users/show.html.erb:8: syntax error, unexpected instance variable, expecting ')'
+app/views/users/show.html.erb:8: syntax error, unexpected instance variable, expecting ')'
+Started GET "/users/2" for ::1 at 2021-09-19 12:59:41 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 28.8ms | Allocations: 6756)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 6839)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.5ms | Allocations: 8966)
+
+
+  
+ActionView::Template::Error (Missing partial articles/_arcticle with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/media/basit/f-drive/backup/ALL_PROJECTS/UDEMY/Ruby on Rails/MY_CODE/RUBY_PROJECTS/ALPHA_BLOG_APP/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actiontext-6.1.4.1/app/views"
+  * "/home/basit/.rvm/gems/ruby-3.0.1/gems/actionmailbox-6.1.4.1/app/views"
+):
+     5:       <%= gravatar_for @user, size:80 %>
+     6:     </div>
+     7:     <h4> <%= @user.name %>,s articles </h4>
+     8:     <%= render 'articles/arcticle', obj: @user.articles %>
+     9:   </div>
+    10: </div>
+  
+app/views/users/show.html.erb:8
+Started GET "/users/2" for ::1 at 2021-09-19 13:00:12 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 12.1ms | Allocations: 2257)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 2750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 318)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 6044)
+Completed 200 OK in 42ms (Views: 30.1ms | ActiveRecord: 2.9ms | Allocations: 8204)
+
+
+Started GET "/users/1" for ::1 at 2021-09-19 13:00:20 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+Completed 404 Not Found in 8ms (ActiveRecord: 1.4ms | Allocations: 1302)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:33:in `show'
+Started GET "/users/3" for ::1 at 2021-09-19 13:00:24 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (2.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 5.4ms | Allocations: 835)
+  Rendered users/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 148)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 3353)
+Completed 200 OK in 25ms (Views: 15.8ms | ActiveRecord: 4.2ms | Allocations: 4502)
+
+
+Started GET "/users/3" for ::1 at 2021-09-19 13:00:56 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 6.7ms | Allocations: 1267)
+  Rendered users/show.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1765)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.4ms | Allocations: 356)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 5093)
+Completed 200 OK in 33ms (Views: 23.2ms | ActiveRecord: 2.9ms | Allocations: 7102)
+
+
+Started GET "/" for ::1 at 2021-09-19 13:01:05 +0500
+Processing by PagesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 384)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 148)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 2883)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 4009)
+
+
+Started GET "/articles" for ::1 at 2021-09-19 13:01:07 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1215)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 1289)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 2405)
+
+
+  
+ActionView::Template::Error (You invoked render but did not give any of :partial, :template, :inline, :file, :plain, :html or :body option.):
+    4: <h1> List of Articles</h1>
+    5: 
+    6: <table>
+    7:   <%= render obj: @articles %>
+    8: </table>
+    9: 
+   10: <br>
+  
+app/views/articles/index.html.erb:7
+Started GET "/articles" for ::1 at 2021-09-19 13:01:39 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1185)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1260)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2621)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+  <p id="notice"><%= notice %></p>
+
+<h1> List of Articles</h1>
+
+<table>
+  <%= render 'article' obj: @articles %>
+</table>
+
+<br>
+
+<%= link_to 'New Article', new_article_path, class:"btn btn-outline-dark my-5" %>
+
+</div>
+):
+1:    <div class="container">
+2:      <p id="notice"><%= notice %></p>
+3:    
+4:    <h1> List of Articles</h1>
+5:    
+6:    <table>
+7:      <%= render 'article' obj: @articles %>
+8:    </table>
+9:    
+10:    <br>
+11:    
+12:    <%= link_to 'New Article', new_article_path, class:"btn btn-outline-dark my-5" %>
+13:    
+14:    </div>
+  
+app/views/articles/index.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/index.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/index.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/index.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/index.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/index.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/articles" for ::1 at 2021-09-19 13:01:59 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 18.3ms | Allocations: 3443)
+  Rendered articles/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 3888)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.4ms | Allocations: 316)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 7153)
+Completed 200 OK in 39ms (Views: 34.0ms | ActiveRecord: 3.1ms | Allocations: 8552)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:02:14 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+Completed 404 Not Found in 6ms (ActiveRecord: 1.4ms | Allocations: 1293)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=4):
+  
+app/controllers/users_controller.rb:33:in `show'
+Started GET "/users/3" for ::1 at 2021-09-19 13:02:16 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (3.8ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 3]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 7.9ms | Allocations: 995)
+  Rendered users/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 1357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 185)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 3925)
+Completed 200 OK in 28ms (Views: 17.2ms | ActiveRecord: 5.1ms | Allocations: 5702)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 13:02:34 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.7ms | Allocations: 1242)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 3858)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 4515)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 13:02:34 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.1ms | Allocations: 772)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 137)
+  Rendered shared/_footer.html.erb (Duration: 9.0ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 60.1ms | Allocations: 3172)
+Completed 200 OK in 64ms (Views: 62.8ms | ActiveRecord: 0.0ms | Allocations: 3629)
+
+
+Started POST "/users" for ::1 at 2021-09-19 13:02:41 +0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Basit", "email"=>"basitkhanbasit640@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Signup", "expect"=>[:new]}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER($1) LIMIT $2[0m  [["name", "Basit"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "basitkhanbasit640@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.0ms | Allocations: 1756)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1853)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 4161)
+Completed 200 OK in 345ms (Views: 15.5ms | ActiveRecord: 10.0ms | Allocations: 9026)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 13:02:53 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | Allocations: 772)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 3171)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 3628)
+
+
+Started POST "/users" for ::1 at 2021-09-19 13:03:01 +0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"yes yes", "email"=>"basitkhanbasit640@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Signup", "expect"=>[:new]}
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER($1) LIMIT $2[0m  [["name", "yes yes"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "basitkhanbasit640@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.3ms | Allocations: 1710)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1807)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 4109)
+Completed 200 OK in 38ms (Views: 17.2ms | ActiveRecord: 7.8ms | Allocations: 8378)
+
+
+Started GET "/signup" for ::1 at 2021-09-19 13:03:04 +0500
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.0ms | Allocations: 772)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 869)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 3171)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 3628)
+
+
+Started POST "/users" for ::1 at 2021-09-19 13:03:07 +0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"yes yes", "email"=>"basitkhanbasit640@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Signup", "expect"=>[:new]}
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."name") = LOWER($1) LIMIT $2[0m  [["name", "yes yes"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER($1) LIMIT $2[0m  [["email", "basitkhanbasit640@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "yes yes"], ["email", "basitkhanbasit640@gmail.com"], ["created_at", "2021-09-19 08:03:07.696354"], ["updated_at", "2021-09-19 08:03:07.696354"], ["password_digest", "$2a$12$6LvY01skBBYhEmP1Z0.YKemUcUAjzGDEsY0veyXfNMukb2vkRxtvO"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 347ms (ActiveRecord: 15.8ms | Allocations: 4724)
+
+
+Started GET "/articles" for ::1 at 2021-09-19 13:03:07 +0500
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (3.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/_article.html.erb:2
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/articles/_article.html.erb:8
+  Rendered articles/_article.html.erb (Duration: 21.0ms | Allocations: 2874)
+  Rendered articles/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 3008)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.5ms | Allocations: 134)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 5322)
+Completed 200 OK in 36ms (Views: 29.8ms | ActiveRecord: 5.6ms | Allocations: 5784)
+
+
+Started GET "/user/4" for ::1 at 2021-09-19 13:03:15 +0500
+  
+ActionController::RoutingError (No route matches [GET] "/user/4"):
+  
+Started GET "/users/4" for ::1 at 2021-09-19 13:03:19 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 4.5ms | Allocations: 835)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.1ms | Allocations: 148)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 3353)
+Completed 200 OK in 21ms (Views: 12.4ms | ActiveRecord: 4.2ms | Allocations: 4497)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:04:50 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 10.3ms | Allocations: 1909)
+  Rendered users/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3429)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 188)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 5907)
+Completed 200 OK in 67ms (Views: 24.6ms | ActiveRecord: 15.5ms | Allocations: 12428)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:04:59 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 7.8ms | Allocations: 1906)
+  Rendered users/show.html.erb within layouts/application (Duration: 11.8ms | Allocations: 3442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 5916)
+Completed 200 OK in 55ms (Views: 19.9ms | ActiveRecord: 13.5ms | Allocations: 12379)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:05:06 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 10.9ms | Allocations: 1906)
+  Rendered users/show.html.erb within layouts/application (Duration: 14.7ms | Allocations: 3442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 188)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 5916)
+Completed 200 OK in 48ms (Views: 18.3ms | ActiveRecord: 14.7ms | Allocations: 12378)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:05:13 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 9.1ms | Allocations: 1906)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.3ms | Allocations: 3442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 5916)
+Completed 200 OK in 52ms (Views: 19.2ms | ActiveRecord: 13.8ms | Allocations: 12377)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:05:20 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 9.1ms | Allocations: 1906)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 5916)
+Completed 200 OK in 51ms (Views: 18.8ms | ActiveRecord: 13.3ms | Allocations: 12377)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:05:56 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 10.5ms | Allocations: 1906)
+  Rendered users/show.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3426)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 5910)
+Completed 200 OK in 59ms (Views: 22.5ms | ActiveRecord: 14.9ms | Allocations: 12432)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:06:04 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 8.7ms | Allocations: 1906)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 5916)
+Completed 200 OK in 49ms (Views: 18.8ms | ActiveRecord: 14.4ms | Allocations: 12379)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:06:14 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 8.3ms | Allocations: 1906)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.4ms | Allocations: 3442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 188)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 45)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 5916)
+Completed 200 OK in 49ms (Views: 20.1ms | ActiveRecord: 12.2ms | Allocations: 12378)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:06:32 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (2.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 13.8ms | Allocations: 2197)
+  Rendered users/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 4045)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.4ms | Allocations: 359)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 7285)
+Completed 200 OK in 67ms (Views: 28.5ms | ActiveRecord: 17.0ms | Allocations: 14427)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:07:20 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 8.5ms | Allocations: 1267)
+  Rendered users/show.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1761)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 356)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 5083)
+Completed 200 OK in 33ms (Views: 23.7ms | ActiveRecord: 3.2ms | Allocations: 7162)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:07:46 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 16.4ms | Allocations: 1270)
+  Rendered users/show.html.erb within layouts/application (Duration: 18.6ms | Allocations: 1764)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 356)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 5095)
+Completed 200 OK in 43ms (Views: 34.0ms | ActiveRecord: 3.8ms | Allocations: 7169)
+
+
+Started GET "/users/4" for ::1 at 2021-09-19 13:07:54 +0500
+Processing by UsersController#show as HTML
+  Parameters: {"expect"=>[:new], "id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."user_id" = $1[0m  [["user_id", 4]]
+  ↳ app/views/articles/_article.html.erb:2
+  Rendered articles/_article.html.erb (Duration: 7.3ms | Allocations: 1267)
+  Rendered users/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1762)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_header.html.erb (Duration: 1.9ms | Allocations: 356)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 163)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 5084)
+Completed 200 OK in 38ms (Views: 26.7ms | ActiveRecord: 3.0ms | Allocations: 7162)
+
+
