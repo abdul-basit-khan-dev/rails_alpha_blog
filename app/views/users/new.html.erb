@@ -1,31 +1,4 @@
 <div class="container">
-  <h1>Signup For Development Services</h1>
-<%= form_with(model: @user) do |form| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-      <ul>
-        <% @user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="mb-3">
-    <%= form.label :name, class:"form-label" %>
-    <%= form.text_field :name, class:"form-control", id:"exampleInputName"%>
-  </div>
-  <div class="mb-3">
-    <%= form.label :email, class:"form-label" %>
-    <%= form.email_field :email, class:"form-control", id:"exampleInputEmail1"%>
-  </div>
-  <div class="mb-3">
-    <%= form.label :password, class:"form-label" %>
-    <%= form.password_field :password, class:"form-control", id:"exampleInputPassword"%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Sign up", class:"btn btn-primary" %>
-  </div>
-<% end %>
+  <h1 align="center">Signup For Development Services</h1>
 </div>
+<%= render 'form' %>
