@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_16_094314) do
+ActiveRecord::Schema.define(version: 2022_06_14_140656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,29 @@ ActiveRecord::Schema.define(version: 2021_09_16_094314) do
     t.string "title"
     t.text "body"
     t.integer "user_id"
+  end
+
+  create_table "films", force: :cascade do |t|
+    t.string "slug"
+    t.jsonb "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.jsonb "budget"
+    t.jsonb "description"
+    t.jsonb "external_ids"
+    t.string "movie_type"
+    t.date "premiere_bluray"
+    t.date "premiere_digital"
+    t.date "premiere_dvd"
+    t.date "premiere_world"
+    t.jsonb "rating"
+    t.jsonb "rating_age_limits"
+    t.string "rating_mpaa"
+    t.jsonb "remote_images"
+    t.jsonb "slogan"
+    t.string "source"
+    t.string "source_lang"
+    t.integer "year"
   end
 
   create_table "users", force: :cascade do |t|
