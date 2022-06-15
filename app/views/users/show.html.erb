@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4 text-center">
+      <h1 class="my-3" >Welcome to <%= @user.name %></h1>
+      <%= gravatar_for @user, size:80 %>
+    </div>
+    <h4 class="my-3" align= "center"> <%= @user.name %>,s articles </h4>
+    <%= render 'articles/article', obj: @user.articles %>
+  </div>
+</div>
+
+
