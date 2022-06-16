@@ -4,3 +4,4 @@ tmp/cache/bootsnap
 tmp/cache/bootsnap/compile-cache
 node_modules/.cache
 /media/basit/f-drive/backup/ALL_PROJECTS/Ruby-on-Rails-Test-Project/rails_alpha_blog/tmp/cache/bootsnap/load-path-cache
+.bundle/
