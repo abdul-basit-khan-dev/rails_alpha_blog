@@ -1,9 +1,24 @@
 <div class="container my-3">
-  <p id="notice"><%= notice %></p>
+  <%= render "shared/message" %>
   <div class="card bg-light p-5" style="text-transform: capitalize;">
-    <h2 class="card-title ">
+    <h2 class="card-title text-center">
       <%= simple_format(@article.title) %> <br>
     </h2>
+    <ul class="listing">
+      <div class="row">
+        <div class="well col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-lg-4 offset-lg-4 mb-2">
+          <li>Created by:</li>
+          <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %></li>
+          <li class="article-title">
+            <%= link_to @article.user.name, user_path(@article.user) %>
+          </li>
+          <li>
+            <small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small>
+          </li>
+        </div>
+      </div>
+    </ul>
+    <h4 class="center">Description:</h4>
     <p class="card-text">
       <%= simple_format( @article.body) %>
     </p>

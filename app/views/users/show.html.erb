@@ -1,11 +1,15 @@
 <div class="container">
   <div class="row">
+    <%= render "shared/message" %>
     <div class="col-md-4 offset-md-4 text-center">
-      <h1 class="my-3" >Welcome to <%= @user.name %></h1>
+      <h1 class="my-3" >Welcome to <%= @user.name %>'s page</h1>
       <%= gravatar_for @user, size:80 %>
     </div>
-    <h4 class="my-3" align= "center"> <%= @user.name %>,s articles </h4>
-    <%= render 'articles/article', obj: @user.articles %>
+    <h4 class="my-3" align= "center"> <%= @user.name %>'  s articles </h4>
+    <div class="d-flex justify-content-center mb-2">
+      <%= will_paginate @user_articles%>
+    </div>
+    <%= render 'articles/article', obj: @user_articles %>
   </div>
 </div>
 

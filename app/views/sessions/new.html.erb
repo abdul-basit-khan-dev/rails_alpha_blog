@@ -1,0 +1,20 @@
+
+
+<h1 align="center">Login</h1>
+<div class="container">
+  <%= render "shared/message" %>
+  <%= form_for(:session, url: login_path) do |form| %>
+    <div class="mb-3">
+      <%= form.label :email, class:"form-label" %>
+      <%= form.text_field :email, class:"form-control", id:"exampleInputEmail" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :password, class:"form-label" %>
+      <%= form.password_field :password, class:"form-control", autocomplete: "off" %>
+    </div>
+  
+    <div class="actions">
+      <%= form.submit "Login", class:"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
